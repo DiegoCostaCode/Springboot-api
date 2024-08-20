@@ -1,15 +1,15 @@
 package br.com.fiap.primeira_api.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity //anotação JPA para dizer que o objeto, classe livro, tem que ser mapeada
+@Table(name = "TB_LIVROS")
 public class Livro {
     @Id //precisamos avisar ao sistema qual atributo se trata do ID. E isso se faz pela anotação @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String titulo;
     private String autor;
-
 
     public Long getId() {
         return id;
