@@ -8,7 +8,9 @@ public class Livro {
     @Id //precisamos avisar ao sistema qual atributo se trata do ID. E isso se faz pela anotação @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "livro_titulo")
     private String titulo;
+    @Column(name = "livro_autor")
     private String autor;
 
     public Long getId() {
